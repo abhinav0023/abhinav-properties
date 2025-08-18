@@ -1,14 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  output: "export",  // Enables static export
   images: {
-    unoptimized: true,
+    unoptimized: true, // Important for GH Pages (no image optimization)
   },
-}
+  basePath: "/abhinav-properties", // 👈 replace with your GitHub repo name
+  assetPrefix: "/abhinav0023/",
+};
 
-export default nextConfig
+export default nextConfig;  
