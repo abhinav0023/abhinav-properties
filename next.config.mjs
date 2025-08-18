@@ -5,7 +5,7 @@ const nextConfig = {
     unoptimized: true, // Important for GH Pages (no image optimization)
   },
   basePath: "/abhinav-properties", // 👈 replace with your GitHub repo name
-  assetPrefix: "/abhinav0023/",
+  assetPrefix: "/abhinav-properties/",
 };
 
 export default nextConfig;  
