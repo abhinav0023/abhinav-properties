@@ -1,11 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",  // Enables static export
+  output: "export",
   images: {
-    unoptimized: true, // Important for GH Pages (no image optimization)
+    unoptimized: true,
   },
-  basePath: "/abhinav-properties", // 👈 replace with your GitHub repo name
-  assetPrefix: "/abhinav-properties/",
 };
 
-export default nextConfig;  
+export default nextConfig;
