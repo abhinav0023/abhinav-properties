@@ -1,6 +1,7 @@
 "use client";
 
 import type React from "react";
+import "./page.styles.css";
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -65,63 +66,56 @@ export default function GreenAcresRealty() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="main-container">
       {/* Navigation Bar */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          showBackToTop
-            ? "bg-white/90 backdrop-blur-md shadow-lg"
-            : "bg-white/70 backdrop-blur-sm"
-        }`}
-      >
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
+        className={`navbar ${showBackToTop ? "navbar-scrolled" : ""}`}>
+        <div className="container">
+          <div className="navbar-content">
             {/* Logo/Brand */}
-            <div className="flex items-center">
-              <div className="w-8 h-8 bg-blue-800 rounded-lg flex items-center justify-center mr-3">
-                <span className="text-white font-bold text-sm">AP</span>
+            <div className="logo-brand">
+              <div className="logo">
+                <span className="logo-text">AP</span>
               </div>
-              <span className="text-xl font-bold text-stone-800">
-                Abhinav Properties
-              </span>
+              <span className="brand-name">Abhinav Properties</span>
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="desktop-nav">
               <button
                 onClick={() => scrollToSection("about")}
-                className="text-stone-700 hover:text-blue-800 transition-colors font-medium"
+                className="nav-link"
               >
                 About
               </button>
               <button
                 onClick={() => scrollToSection("gallery")}
-                className="text-stone-700 hover:text-blue-800 transition-colors font-medium"
+                className="nav-link"
               >
                 Properties
               </button>
               <button
                 onClick={() => scrollToSection("testimonials")}
-                className="text-stone-700 hover:text-blue-800 transition-colors font-medium"
+                className="nav-link"
               >
                 Testimonials
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
-                className=" shadow-2xl bg-blue-200 hover:bg-blue-700 text-black hover:text-white px-4 py-2 rounded-lg transition-colors font-medium"
+                className="nav-button"
               >
                 Contact Us
               </button>
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="md:hidden">
+            <div className="mobile-menu-button-container">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="text-stone-600 hover:text-emerald-600 transition-colors"
+                className="mobile-menu-button"
               >
                 <svg
-                  className="w-6 h-6"
+                  className="mobile-menu-icon"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -139,14 +133,14 @@ export default function GreenAcresRealty() {
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-stone-200">
-              <div className="px-2 pt-2 pb-3 space-y-1">
+            <div className="mobile-menu">
+              <div className="mobile-menu-content">
                 <button
                   onClick={() => {
                     scrollToSection("about");
                     setMobileMenuOpen(false);
                   }}
-                  className="block w-full text-left px-3 py-2 text-stone-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-md transition-colors font-medium"
+                  className="mobile-menu-link"
                 >
                   About
                 </button>
@@ -155,7 +149,7 @@ export default function GreenAcresRealty() {
                     scrollToSection("gallery");
                     setMobileMenuOpen(false);
                   }}
-                  className="block w-full text-left px-3 py-2 text-stone-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-md transition-colors font-medium"
+                  className="mobile-menu-link"
                 >
                   Properties
                 </button>
@@ -164,7 +158,7 @@ export default function GreenAcresRealty() {
                     scrollToSection("testimonials");
                     setMobileMenuOpen(false);
                   }}
-                  className="block w-full text-left px-3 py-2 text-stone-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-md transition-colors font-medium"
+                  className="mobile-menu-link"
                 >
                   Testimonials
                 </button>
@@ -173,7 +167,7 @@ export default function GreenAcresRealty() {
                     scrollToSection("contact");
                     setMobileMenuOpen(false);
                   }}
-                  className="block w-full text-left px-3 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-md transition-colors font-medium"
+                  className="mobile-menu-button-contact"
                 >
                   Contact Us
                 </button>
@@ -184,54 +178,53 @@ export default function GreenAcresRealty() {
       </nav>
 
       {/* Header/Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden pt-16">
-        <div className="absolute inset-0 z-0">
+      <section className="hero-section">
+        <div className="hero-background">
           <Image
             src="/background.avif?height=1080&width=1920"
             alt="Scenic plot of land in India"
             fill
-            className="object-cover"
+            className="hero-image"
             priority
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="hero-overlay" />
         </div>
 
         <div
-          className="relative z-10 text-center te
-        xt-white px-4 max-w-4xl mx-auto"
+          className="hero-content"
         >
-          <h1 className="text-5xl text-white md:text-7xl font-bold mb-6 animate-fade-in">
+          <h1 className="hero-title">
             Abhinav Properties
           </h1>
-          <p className="text-xl text-white md:text-2xl mb-8 font-light">
+          <p className="hero-subtitle">
             Discover the Land Where Your Dreams Take Root
           </p>
           <Button
             size="lg"
-            className="bg-blue-300 hover:bg-blue-800 hover:text-white text-black px-8 py-3 text-lg font-semibold transition-all duration-300 transform hover:scale-105"
+            className="hero-button"
             onClick={() => scrollToSection("contact")}
           >
             Contact Us
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <ArrowRight className="hero-button-icon" />
           </Button>
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse" />
+        <div className="scroll-indicator">
+          <div className="scroll-indicator-mouse">
+            <div className="scroll-indicator-wheel" />
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-stone-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-stone-800 mb-8">
+      <section id="about" className="about-section">
+        <div className="container">
+          <div className="about-content">
+            <h2 className="section-title">
               About Abhinav Properties
             </h2>
-            <p className="text-lg text-stone-600 leading-relaxed mb-8">
+            <p className="section-subtitle">
               With over 20+ years of expertise in the Indian real estate market,
               Abhinav Properties specializes in connecting you with premium
               lands and plots across Haryana. From agricultural lands in Punjab
@@ -241,37 +234,37 @@ export default function GreenAcresRealty() {
               partner for thousands of property investors and homebuyers.
             </p>
 
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div className="text-center">
-                <div className="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="h-8 w-8 text-emerald-600" />
+            <div className="about-features">
+              <div className="feature">
+                <div className="feature-icon-container">
+                  <Users className="feature-icon" />
                 </div>
-                <h3 className="text-xl font-semibold text-stone-800 mb-2">
+                <h3 className="feature-title">
                   1000+ Happy Clients
                 </h3>
-                <p className="text-stone-600">
+                <p className="feature-description">
                   Trusted by families across India
                 </p>
               </div>
-              <div className="text-center">
-                <div className="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Award className="h-8 w-8 text-emerald-600" />
+              <div className="feature">
+                <div className="feature-icon-container">
+                  <Award className="feature-icon" />
                 </div>
-                <h3 className="text-xl font-semibold text-stone-800 mb-2">
+                <h3 className="feature-title">
                   20+ Years Experience
                 </h3>
-                <p className="text-stone-600">
+                <p className="feature-description">
                   Two decades of real estate expertise
                 </p>
               </div>
-              <div className="text-center">
-                <div className="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <MapIcon className="h-8 w-8 text-emerald-600" />
+              <div className="feature">
+                <div className="feature-icon-container">
+                  <MapIcon className="feature-icon" />
                 </div>
-                <h3 className="text-xl font-semibold text-stone-800 mb-2">
+                <h3 className="feature-title">
                   Legal Compliance
                 </h3>
-                <p className="text-stone-600">
+                <p className="feature-description">
                   100% verified and documented properties
                 </p>
               </div>
@@ -280,29 +273,27 @@ export default function GreenAcresRealty() {
             <Button
               variant="outline"
               size="lg"
-              className="border-emerald-600 text-emerald-600 hover:bg-emerald-600 hover:text-white transition-all duration-300"
+              className="about-button"
               onClick={() => scrollToSection("gallery")}
             >
               Explore Our Offerings
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="about-button-icon" />
             </Button>
           </div>
         </div>
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-stone-800 mb-4">
-              Featured Properties
-            </h2>
-            <p className="text-lg text-stone-600">
+      <section id="gallery" className="gallery-section">
+        <div className="container">
+          <div className="gallery-header">
+            <h2 className="section-title">Featured Properties</h2>
+            <p className="section-subtitle">
               Discover premium lands and plots across India
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="gallery-grid">
             {[
               {
                 location: "Bangalore, Karnataka",
@@ -389,37 +380,30 @@ export default function GreenAcresRealty() {
             ].map((property, index) => (
               <Card
                 key={index}
-                className="group overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-l-emerald-500"
+                className="property-card"
               >
-                <CardContent className="p-6">
-                  <div className="mb-4">
-                    <h3 className="text-xl font-bold text-stone-800 mb-1">
-                      {property.type}
-                    </h3>
-                    <div className="flex items-center justify-between">
-                      <p className="text-stone-600 flex items-center text-sm">
-                        <MapPin className="h-4 w-4 mr-1 text-emerald-600" />
+                <CardContent className="property-card-content">
+                  <div className="property-card-header">
+                    <h3 className="property-card-title">{property.type}</h3>
+                    <div className="property-card-info">
+                      <p className="property-card-location">
+                        <MapPin className="property-card-icon" />
                         {property.location}
                       </p>
-                      <p className="text-lg font-semibold text-emerald-600">
-                        {property.area}
-                      </p>
+                      <p className="property-card-area">{property.area}</p>
                     </div>
                   </div>
 
-                  <div className="space-y-4">
+                  <div className="property-card-details">
                     <div>
-                      <h4 className="font-semibold text-stone-700 mb-2 flex items-center">
-                        <MapPin className="h-4 w-4 mr-2 text-emerald-600" />
+                      <h4 className="property-card-subtitle">
+                        <MapPin className="property-card-icon" />
                         Nearby Places
                       </h4>
-                      <ul className="space-y-1">
+                      <ul className="property-card-list">
                         {property.nearby.map((place, idx) => (
-                          <li
-                            key={idx}
-                            className="text-sm text-stone-600 flex items-center"
-                          >
-                            <div className="w-1 h-1 bg-emerald-500 rounded-full mr-2" />
+                          <li key={idx} className="property-card-list-item">
+                            <div className="property-card-list-bullet" />
                             {place}
                           </li>
                         ))}
@@ -427,16 +411,13 @@ export default function GreenAcresRealty() {
                     </div>
 
                     <div>
-                      <h4 className="font-semibold text-stone-700 mb-2 flex items-center">
-                        <Award className="h-4 w-4 mr-2 text-emerald-600" />
+                      <h4 className="property-card-subtitle">
+                        <Award className="property-card-icon" />
                         Key Features
                       </h4>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="property-card-features">
                         {property.features.map((feature, idx) => (
-                          <span
-                            key={idx}
-                            className="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full border border-emerald-200"
-                          >
+                          <span key={idx} className="property-card-feature-tag">
                             {feature}
                           </span>
                         ))}
