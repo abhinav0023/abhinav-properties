@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "Luxury Villa in Banjara Hills",
+    "price": "₹2.5 Crores",
+    "location": "Banjara Hills, Hyderabad",
+    "image": "/placeholder.svg?height=300&width=400",
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "area": "3500 sq ft",
+    "type": "Villa"
+  },
+  {
+    "id": 2,
+    "title": "Modern Apartment in Gachibowli",
+    "price": "₹85 Lakhs",
+    "location": "Gachibowli, Hyderabad",
+    "image": "/placeholder.svg?height=300&width=400",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "area": "1800 sq ft",
+    "type": "Apartment"
+  },
+  {
+    "id": 3,
+    "title": "Premium Flat in Jubilee Hills",
+    "price": "₹1.8 Crores",
+    "location": "Jubilee Hills, Hyderabad",
+    "image": "/placeholder.svg?height=300&width=400",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "area": "2200 sq ft",
+    "type": "Flat"
+  },
+  {
+    "id": 4,
+    "title": "Spacious House in Kondapur",
+    "price": "₹1.2 Crores",
+    "location": "Kondapur, Hyderabad",
+    "image": "/placeholder.svg?height=300&width=400",
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "area": "2800 sq ft",
+    "type": "House"
+  },
+  {
+    "id": 5,
+    "title": "Executive Apartment in Madhapur",
+    "price": "₹95 Lakhs",
+    "location": "Madhapur, Hyderabad",
+    "image": "/placeholder.svg?height=300&width=400",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "area": "1400 sq ft",
+    "type": "Apartment"
+  },
+  {
+    "id": 6,
+    "title": "Elegant Villa in Kompally",
+    "price": "₹1.6 Crores",
+    "location": "Kompally, Hyderabad",
+    "image": "/placeholder.svg?height=300&width=400",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "area": "3200 sq ft",
+    "type": "Villa"
+  }
+]
