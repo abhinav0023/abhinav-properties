@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Abhinav Properties - Real Estate Website
 
 A modern, responsive real estate website built with React.js and vanilla CSS. This website showcases premium properties in Hyderabad and provides a professional platform for property listings and client inquiries.
