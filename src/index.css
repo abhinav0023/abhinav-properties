@@ -1,0 +1,63 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-inter: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mulish: 'Mulish', ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: #f2efe9;
+  --color-foreground: #38332f;
+  --color-surface: #ffffff;
+  --color-muted: #fbfbf9;
+  --color-muted-foreground: #7e7975;
+  --color-accent: #fb7339;
+  --color-accent-strong: #f14e23;
+  --color-border: #a39c8c;
+  --color-dark: #38332f;
+  --color-black: #000000;
+
+  --shadow-none: none;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    margin: 0;
+    min-height: 100svh;
+    font-family: var(--font-inter);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #root {
+    min-height: 100svh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-mulish);
+    font-weight: 700;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
+  }
+}
