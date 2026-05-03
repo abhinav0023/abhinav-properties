@@ -2,8 +2,8 @@ import { motion as Motion } from 'framer-motion'
 import { hero, site } from '../data/site'
 import { openWhatsApp } from '../lib/whatsapp'
 
-const EASE = [0.215, 0.61, 0.355, 1]
-const HERO_SPRING = { type: 'spring', stiffness: 220, damping: 14 }
+const EASE = [0.215, 0.61, 0.355, 1] as const
+const HERO_SPRING = { type: 'spring' as const, stiffness: 220, damping: 14 }
 
 export function Hero() {
   const words = hero.headline.split(' ')
@@ -77,7 +77,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: EASE, delay: 0.7 }}
-          className="mt-10 flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center sm:justify-center"
+          className="mt-10 flex flex-col items-stretch justify-center gap-4 opacity-0 sm:flex-row sm:items-center sm:justify-center"
         >
           <button
             type="button"
